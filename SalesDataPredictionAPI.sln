@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesDataPredictionAPI", "SalesDataPredictionAPI.csproj", "{BF40D0F6-9AC9-4C72-A19D-485FC0023C28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF40D0F6-9AC9-4C72-A19D-485FC0023C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF40D0F6-9AC9-4C72-A19D-485FC0023C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF40D0F6-9AC9-4C72-A19D-485FC0023C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF40D0F6-9AC9-4C72-A19D-485FC0023C28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41EA3B16-4C2A-4FC3-9A1B-3D29AC9D3F21}
+	EndGlobalSection
+EndGlobal
