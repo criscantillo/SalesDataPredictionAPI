@@ -12,14 +12,14 @@ namespace SalesDataPredictionAPI.Controllers
 
         public OrderController(IOrderRepository orderRepository) => _orderRepository = orderRepository;
 
-        [HttpGet("/predict/{custName}")]
+        [HttpGet("{custName}/{predict}")]
         [ActionName(nameof(GetOrdersPredictionsAsync))]
-        public IEnumerable<OrderPrediction> GetOrdersPredictionsAsync(string custName)
+        public IEnumerable<OrderPrediction> GetOrdersPredictionsAsync(string custName, string predict)
         {
             return _orderRepository.GetOrderPredictionAsync(custName);
         }
 
-        [HttpGet("/cust/{custId}")]
+        [HttpGet("{custId}")]
         [ActionName(nameof(GetOrdersByCustomerAsync))]
         public IEnumerable<Order> GetOrdersByCustomerAsync(int custId)
         {
@@ -31,17 +31,6 @@ namespace SalesDataPredictionAPI.Controllers
         public IEnumerable<Order> GetOrdersAsync()
         {
             return _orderRepository.GetAsync();
-        }
-
-        [HttpGet("{id}")]
-        [ActionName(nameof(GetOrdersById))]
-        public ActionResult<Order> GetOrdersById(int id)
-        {
-            var orderById = _orderRepository.GetByIdAsync(id);
-            if (orderById == null)
-                return NotFound();
-
-            return orderById;
         }
 
         [HttpPost]

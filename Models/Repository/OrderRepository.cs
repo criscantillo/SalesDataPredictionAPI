@@ -60,9 +60,10 @@ namespace SalesDataPredictionAPI.Models.Repository
         public IEnumerable<OrderPrediction> GetOrderPredictionAsync(string custName)
         {
             string SQL = @"SELECT ROW_NUMBER() OVER(ORDER BY c.companyname ASC) AS Id
+                                , c.custId
                                 , c.companyname CustomerName
-	                            , LastOrderDate
-	                            , NextPredictedOrder
+	                            , FORMAT(LastOrderDate, 'M-d-yyyy') LastOrderDate
+	                            , FORMAT(NextPredictedOrder, 'M-d-yyyy') NextPredictedOrder
 	                            , AvgDays
                             FROM
                             (
@@ -86,8 +87,8 @@ namespace SalesDataPredictionAPI.Models.Repository
                             {0}
                             ";
 
-            if (custName != "*")
-                SQL = string.Format(SQL, "WHERE c.companyname = @custName");
+            if (custName != "all")
+                SQL = string.Format(SQL, "WHERE c.companyname LIKE '%' + @custName + '%'");
             else
                 SQL = string.Format(SQL, "");
 

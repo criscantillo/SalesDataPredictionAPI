@@ -11,6 +11,6 @@ namespace SalesDataPredictionAPI.Models.Repository
         IEnumerable<Order> GetAsync();
         IEnumerable<Order> GetByCustomerAsync(int custId);
         Order GetByIdAsync(int id);
-        IEnumerable<OrderPrediction> GetOrderPredictionAsync(string custName = "*");
+        IEnumerable<OrderPrediction> GetOrderPredictionAsync(string custName = "all");
     }
 }
